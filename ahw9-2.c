@@ -2,30 +2,30 @@
 
 int main() {
     // z125529
-    
-    int n;
-    scanf("%d", &n);
+    int n = 5;
 
-    int a[n];
-
+    int arr[n];
     for(int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
+        scanf("%d", &arr[i]);
 
-    for(int i = 0; i < n-1; i++) {
+    // printf("Original tab\n");
+    // for(int i = 0; i < n; i++)
+    //     printf("%d ", arr[i]);
+
+    for(int i = 0; i < n - 1; i++) {
         int min = i;
-        for(int j = i+1; j < n; j++)
-            if(a[j] < a[min])
+        for(int j = i + 1; j < n; j++) {
+            if(arr[j] < arr[min])
                 min = j;
-
-        int temp = a[i];
-        a[i] = a[min];
-        a[min] = temp;
+        }
+        int temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
     }
 
-    printf("sorted array:");
+    printf("sorted array:\n");
     for(int i = 0; i < n; i++)
-        printf("%d ", a[i]);
-    printf("\n");
+        printf("%d ", arr[i]);
 
     return 0;
 }
