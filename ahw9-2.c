@@ -1,17 +1,16 @@
 #include <stdio.h>
 
 int main() {
+    // z125529
+    
     int n;
-    printf("Enter number of elements: ");
     scanf("%d", &n);
 
     int a[n];
-    printf("Enter %d numbers:\n", n);
 
     for(int i = 0; i < n; i++)
         scanf("%d", &a[i]);
 
-    // Selection sort
     for(int i = 0; i < n-1; i++) {
         int min = i;
         for(int j = i+1; j < n; j++)
@@ -23,7 +22,7 @@ int main() {
         a[min] = temp;
     }
 
-    printf("Sorted: ");
+    printf("sorted array:");
     for(int i = 0; i < n; i++)
         printf("%d ", a[i]);
     printf("\n");
